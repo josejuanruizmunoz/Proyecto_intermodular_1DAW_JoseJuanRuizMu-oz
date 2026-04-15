@@ -1,5 +1,8 @@
-CREATE DATABASE barberia_daw;
+-- Creamos la base de datos y la usamos
+CREATE DATABASE IF NOT EXISTS barberia_daw;
+USE barberia_daw;
 
+-- 1. Tabla CLIENTES (Tabla maestra, no tiene claves foráneas)
 CREATE TABLE clientes (
     id_cliente INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,
@@ -9,7 +12,7 @@ CREATE TABLE clientes (
     creado_en TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-
+-- 2. Tabla SERVICIOS (Tabla maestra, no tiene claves foráneas)
 CREATE TABLE servicios (
     id_servicio INT AUTO_INCREMENT PRIMARY KEY,
     nombre_servicio VARCHAR(100) NOT NULL,
@@ -18,7 +21,7 @@ CREATE TABLE servicios (
     activo BOOLEAN DEFAULT TRUE
 );
 
-
+-- 3. Tabla CITAS (Depende de CLIENTES)
 CREATE TABLE citas (
     id_cita INT AUTO_INCREMENT PRIMARY KEY,
     fecha_hora DATETIME NOT NULL,
@@ -30,7 +33,7 @@ CREATE TABLE citas (
         ON UPDATE CASCADE   
 );
 
-
+-- 4. Tabla Puente CITA_SERVICIO (Relación N:M entre Citas y Servicios)
 CREATE TABLE cita_servicio (
     id_cita INT NOT NULL,
     id_servicio INT NOT NULL,
