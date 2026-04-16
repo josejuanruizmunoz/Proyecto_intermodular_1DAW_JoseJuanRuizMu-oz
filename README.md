@@ -1,10 +1,13 @@
-# Barbería 1DAW Jose Juan Ruiz Muñoz
+# Proyecto Intermodular Barberia DAW
 
-Proyecto Intermodular para 1º de DAW. 
-Sistema integral para la gestión de una barbería, organizado por módulos para facilitar su evaluación.
+Este es el repositorio principal de mi proyecto para gestionar una barberia. Lo he dividido todo en carpetas por asignaturas para que sea mas comodo de evaluar y tener el codigo ordenado.
 
-## Estructura del repositorio por asignaturas:
-* **/Bases_de_Datos**: Modelo E/R y scripts SQL (`creacion.sql`, `insercion.sql`).
-* **/Lenguaje_de_Marcas**: Interfaz web (Frontend) corporativa en HTML5 y CSS3.
-* **/Programacion_y_MPO**: Aplicación backend en Java con conexión a base de datos (JDBC) y arquitectura por capas.
-* **/Sistemas_Informaticos**: Informe técnico sobre el entorno de ejecución, hardware y sistema operativo.
+## Estructura de las carpetas
+
+1. Bases de Datos: En esta carpeta estan los diagramas de como pense la estructura y los archivos sql para montar y probar la base de datos. Dentro hay otro readme con los detalles concretos de esta parte.
+
+2. Lenguaje de Marcas: Aqui ira toda la parte visual de la pagina web hecha en HTML y CSS.
+
+3. Programacion y MPO: Aqui estara el programa hecho en Java. Se conectara a la base de datos que he creado y estara separado por capas.
+
+4. Sistemas Informaticos: En esta carpeta metere el informe tecnico final contando como he montado el entorno, el hardware y los requisitos para que funcione.
