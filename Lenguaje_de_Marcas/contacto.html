@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Bug Fixer Barbers - Pedir cita</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="brand">
+            <h1>The Bug Fixer Barbers</h1>
+        </div>
+        
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="equipo.html">El Equipo</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        
+        <section class="contacto-header">
+            <h2>Abre un Ticket (Pedir Cita)</h2>
+            <p>Rellena el formulario para reservar tu slot en nuestro servidor. Te confirmaremos el despliegue lo antes posible.</p>
+        </section>
+
+        <section class="contacto-form-container">
+            
+            <form action="#" method="POST" class="formulario-cita">
+                
+                <div class="form-group">
+                    <label for="nombre">Nombre de Usuario (Name):</label>
+                    <input type="text" id="nombre" name="nombre" required placeholder="Ej: Linus Torvalds">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Correo Electrónico (Email):</label>
+                    <input type="email" id="email" name="email" required placeholder="tu@email.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="servicio">Selecciona tu Actualización:</label>
+                    <select id="servicio" name="servicio" required>
+                        <option value="">-- Selecciona un servicio --</option>
+                        <option value="corte-clasico">Corte Clásico "Refactor"</option>
+                        <option value="barba">Arreglo de Barba "Debugging"</option>
+                        <option value="corte-lavado">Corte + Lavado "Clean Build"</option>
+                        <option value="tinte">Tinte "Syntax Highlight"</option>
+                        <option value="premium">Corte Premium "Deploy en Viernes"</option>
+                        <option value="afeitado">Afeitado a Navaja "Hard Reset"</option>
+                    </select>
+                </div>
+
+                <div class="form-group-doble">
+                    <label for="fecha">Fecha del Despliegue:</label>
+                    <input type="date" id="fecha" name="fecha" required>
+                    
+                    <label for="hora">Hora:</label>
+                    <input type="time" id="hora" name="hora" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="mensaje">Comentarios o Bugs a reportar (Opcional):</label>
+                    <textarea id="mensaje" name="mensaje" rows="4" placeholder="Ej: Cuidado con la cicatriz cerca de la oreja..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-principal">Ejecutar Reserva (Submit)</button>
+            </form>
+
+        </section>
+
+    </main>
+
+    <footer>
+
+        <div class="footer-contenedor">
+            
+            <div class="footer-info">
+                <h4>The Bug Fixer Barbers</h4>
+                <p>📍 Dirección: Calle Localhost, 127.0.0.1</p>
+                <p>🕒 Horario: L-V de 09:00 a 20:00 (o hasta que compile)</p>
+            </div>
+            
+            <div class="footer-social">
+                <h4>Nuestras Redes</h4>
+                <ul>
+                    <li><a href="#">GitHub</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="footer-copy">
+            <p>&copy; 2026 The Bug Fixer Barbers. Proyecto Intermodular - Lenguaje de Marcas.</p>
+        </div>
+
+    </footer>
+
+</body>
+</html>
