@@ -1,4 +1,4 @@
-USE barberia_daw;
+USE thebugfixerbarbers;
 
 -- 1. CLIENTES (Metemos 5 clientes variados)
 INSERT INTO clientes (nombre, telefono, email) VALUES

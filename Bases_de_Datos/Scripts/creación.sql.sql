@@ -1,6 +1,6 @@
 -- Creamos la base de datos y la usamos
-CREATE DATABASE IF NOT EXISTS barberia_daw;
-USE barberia_daw;
+CREATE DATABASE IF NOT EXISTS thebugfixerbarbers;
+USE thebugfixerbarbers;
 
 -- 1. Tabla CLIENTES (Tabla maestra, no tiene claves foráneas)
 CREATE TABLE clientes (

@@ -1,4 +1,4 @@
-USE barberia_daw;
+USE thebugfixerbarbers;
 
 -- 1. AGENDA DEL DÍA: Ver todas las citas con el nombre del cliente (JOIN simple)
 SELECT c.id_cita, c.fecha_hora, cl.nombre AS cliente, cl.telefono, c.estado
