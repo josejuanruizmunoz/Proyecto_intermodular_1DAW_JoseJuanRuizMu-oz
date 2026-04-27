@@ -53,3 +53,11 @@ INSERT INTO cita_servicio (id_cita, id_servicio, cantidad, precio_aplicado, dura
 -- Cita 6 (Miguel - Cancelada): Corte Clásico
 INSERT INTO cita_servicio (id_cita, id_servicio, cantidad, precio_aplicado, duracion_aplicada) VALUES
 (6, 1, 1, 15.00, 30);
+
+-- Insertamos el primer administrador 
+INSERT INTO Usuarios (username, password, rol) 
+VALUES ('admin_josejuan', '1234', 'ADMIN');
+
+-- Insertamos un cliente de prueba
+INSERT INTO Usuarios (username, password, rol) 
+VALUES ('cliente_prueba', '1234', 'CLIENTE');
