@@ -14,6 +14,8 @@ Antes de crear las tablas, pensé en como funciona una barbería real para monta
 
 4. El detalle de la cita (Tabla Puente): Como en una sola cita te puedes hacer varias cosas (por ejemplo: corte y barba), he usado una tabla puente llamada cita_servicio. Un detalle importante que he tenido en cuenta: he metido el precio y la duracion en esta tabla. De esta forma, si el año que viene la barberia sube los precios de los cortes, el historial de citas antiguas se queda con el precio que se cobro en su dia y no se rompe la contabilidad.
 
+5. Además de las entidades principales del negocio, se ha incluido una tabla independiente llamada "Usuarios". Esta tabla fue diseñada específicamente para gestionar el login y los permisos dentro de la aplicación Java.
+
 ## Que hay en esta carpeta 
 
 1. Modelo_ER_Barberia.png: El esquema conceptual Entidad-Relación inicial que dibujé para pensar la estructura.

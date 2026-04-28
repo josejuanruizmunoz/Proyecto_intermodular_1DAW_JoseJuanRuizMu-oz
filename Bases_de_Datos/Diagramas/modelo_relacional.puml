@@ -41,6 +41,13 @@ class Cita_Servicio {
   - duracion_aplicada : int
 }
 
+class Usuarios {
+  - id : int <<PK>>
+  - username : String [UNIQUE]
+  - password : String
+  - rol : Enum
+}
+
 
 Cliente "1" -- "0..*" Cita
 Cita "1" -- "1..*" Cita_Servicio
