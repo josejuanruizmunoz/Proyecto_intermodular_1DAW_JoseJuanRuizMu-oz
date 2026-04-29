@@ -1,0 +1,56 @@
+@startuml modelo_relacional
+
+skinparam class {
+    BackgroundColor #F4F4F4
+    ArrowColor Black
+    BorderColor #A0A0A0
+}
+skinparam linetype ortho
+
+
+class Cliente {
+  - id_cliente : int <<PK>>
+  - nombre : String
+  - telefono : String [UNIQUE]
+  - email : String
+  - activo : boolean
+  - creado_en : Timestamp
+}
+
+class Servicio {
+  - id_servicio : int <<PK>>
+  - nombre_servicio : String
+  - precio : double
+  - duracion : int
+  - activo : boolean
+}
+
+class Cita {
+  - id_cita : int <<PK>>
+  - fecha_hora : DateTime
+  - id_cliente : int <<FK>>
+  - estado : Enum
+  - notas : String
+}
+
+class Cita_Servicio {
+  - id_cita : int <<PK, FK>>
+  - id_servicio : int <<PK, FK>>
+  - cantidad : int
+  - precio_aplicado : double
+  - duracion_aplicada : int
+}
+
+class Usuarios {
+  - id : int <<PK>>
+  - username : String [UNIQUE]
+  - password : String
+  - rol : Enum
+}
+
+
+Cliente "1" -- "0..*" Cita
+Cita "1" -- "1..*" Cita_Servicio
+Servicio "1" -- "0..*" Cita_Servicio
+
+@enduml
