@@ -40,8 +40,9 @@ public class Main {
             System.out.println("\n--- PANEL DE ADMINISTRADOR ---");
             System.out.println("1. Registrar nuevo cliente");
             System.out.println("2. Ver todos los clientes");
-            System.out.println("3. Borrar un cliente");
-            System.out.println("4. Salir");
+            System.out.println("3. Modificar un cliente");
+            System.out.println("4. Borrar un cliente");
+            System.out.println("5. Salir");
             System.out.print("Elige una opcion: ");
 
             try {
@@ -85,6 +86,41 @@ public class Main {
                     ClienteDAO.listarClientes();
                     break;
                 case 3:
+                    System.out.print("Introduce el ID del cliente a modificar: ");
+                    try {
+                        int idModificar = Integer.parseInt(teclado.nextLine());
+
+                        System.out.print("Nuevo nombre: ");
+                        String nuevoNombre = teclado.nextLine();
+
+                        String nuevoEmail;
+                        do {
+                            System.out.print("Nuevo Email (debe contener @ y .): ");
+                            nuevoEmail = teclado.nextLine();
+                            if (!Validador.esEmailValido(nuevoEmail)) {
+                                System.out.println("Error: Formato de email incorrecto.");
+                            }
+                        } while (!Validador.esEmailValido(nuevoEmail));
+
+                        String nuevoTelefono;
+                        do {
+                            System.out.print("Nuevo Telefono (9 digitos): ");
+                            nuevoTelefono = teclado.nextLine();
+                            if (!Validador.esTelefonoValido(nuevoTelefono)) {
+                                System.out.println("Error: El telefono debe tener 9 numeros.");
+                            }
+                        } while (!Validador.esTelefonoValido(nuevoTelefono));
+
+                        if (ClienteDAO.modificarCliente(idModificar, nuevoNombre, nuevoEmail, nuevoTelefono)) {
+                            System.out.println("Cliente modificado correctamente.");
+                        } else {
+                            System.out.println("No se encontro ningun cliente con ese ID o hubo un error.");
+                        }
+                    } catch (NumberFormatException e) {
+                        System.out.println("ID invalido. Debes introducir un numero.");
+                    }
+                    break;
+                case 4:
                     System.out.print("Introduce el ID del cliente a borrar: ");
                     try {
                         int idBorrar = Integer.parseInt(teclado.nextLine());
@@ -97,12 +133,12 @@ public class Main {
                         System.out.println("ID invalido. Debes introducir un numero.");
                     }
                     break;
-                case 4:
+                case 5:
                     System.out.println("Saliendo del panel...");
                     break;
                 default:
                     System.out.println("Opcion no valida.");
             }
-        } while (opcion != 4);
+        } while (opcion != 5);
     }
 }

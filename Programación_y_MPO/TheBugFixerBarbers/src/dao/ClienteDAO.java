@@ -64,4 +64,24 @@ public class ClienteDAO {
             return false;
         }
     }
+
+    public static boolean modificarCliente(int idCliente, String nuevoNombre, String nuevoEmail, String nuevoTelefono) {
+        String sql = "UPDATE clientes SET nombre = ?, email = ?, telefono = ? WHERE id_cliente = ?";
+
+        try (Connection conn = ConexionDB.conectar();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+            pstmt.setString(1, nuevoNombre);
+            pstmt.setString(2, nuevoEmail);
+            pstmt.setString(3, nuevoTelefono);
+            pstmt.setInt(4, idCliente);
+
+            int filasAfectadas = pstmt.executeUpdate();
+            return filasAfectadas > 0;
+
+        } catch (SQLException e) {
+            System.out.println("Error al modificar cliente: " + e.getMessage());
+            return false;
+        }
+    }
 }
